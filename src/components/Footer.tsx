@@ -1,5 +1,5 @@
-import { Github, Twitter, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Globe, MessageCircle, Camera } from 'lucide-react';
 
 
 export const Footer = () => {
@@ -56,7 +56,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="p-2 -m-2 hover:scale-110 transition-all text-gray-400 hover:text-black"
             >
-              <Github className="w-6 h-6" />
+              <Globe className="w-6 h-6" />
             </a>
             <a 
               href="https://twitter.com" 
@@ -64,7 +64,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="p-2 -m-2 hover:scale-110 transition-all text-gray-400 hover:text-blue-400"
             >
-              <Twitter className="w-6 h-6" />
+              <MessageCircle className="w-6 h-6" />
             </a>
             <a 
               href="https://instagram.com" 
@@ -72,7 +72,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="p-2 -m-2 hover:scale-110 transition-all text-gray-400 hover:text-pink-500"
             >
-              <Instagram className="w-6 h-6" />
+              <Camera className="w-6 h-6" />
             </a>
           </div>
         </div>
