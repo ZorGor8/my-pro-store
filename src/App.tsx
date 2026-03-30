@@ -13,6 +13,7 @@ import { ContactPage } from './pages/ContactPage';
 import { FeaturedPage } from './pages/FeaturedPage';
 import { NewArrivalsPage } from './pages/NewArrivalsPage';
 import { ShippingPage } from './pages/ShippingPage';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Footer } from './components/Footer'; 
 import './App.css';
 
@@ -140,6 +141,7 @@ function App() {
       </header>
 
       <main className="max-w-7xl mx-auto px-0 md:px-4">
+          <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductDetails />} />
