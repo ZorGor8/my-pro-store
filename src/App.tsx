@@ -122,7 +122,8 @@ function App() {
       <main className="max-w-7xl mx-auto px-0 md:px-4">
         <ScrollToTop /> 
         <Routes>
-          <Route path="/" element={<ProductList />} />
+         // В файле App.tsx
+          <Route path="/" element={<ProductList isLoading={isLoading} />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/checkout" element={<CheckoutPage/>} />
           <Route path="/about" element={<AboutPage />} />
