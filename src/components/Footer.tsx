@@ -1,52 +1,53 @@
 import { Link } from 'react-router-dom';
 import { Globe, MessageCircle, Camera } from 'lucide-react';
 
-
 export const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-100 mt-20 pt-16 pb-8">
+    <footer className="bg-white border-t border-gray-100 mt-20 pt-16 pb-8 relative z-50">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-1">
           <span className="text-xl font-black tracking-tighter">PREMIUM<span className="text-blue-600">STORE</span></span>
-          <p className="text-gray-400 text-sm mt-4 leading-relaxed">Лучшие товары для тех, кто ценит качество и стиль. (Only the best for those who value style.)</p>
+          <p className="text-gray-400 text-sm mt-4 leading-relaxed">
+            Лучшие товары для тех, кто ценит качество и стиль. (Only the best for those who value style.)
+          </p>
         </div>
         
-{/*  Shop  */}
-  <div>
-    <h4 className="font-bold mb-6 text-gray-900">Shop (Магазин)</h4>
-    <ul className="space-y-4 text-sm text-gray-500 font-medium">
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/">All Products</Link>
-      </li>
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/featured">Featured</Link>
-      </li>
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/new-arrivals">New Arrivals</Link>
-      </li>
-    </ul>
-  </div>
+        {/* Shop  */}
+        <div>
+          <h4 className="font-bold mb-6 text-gray-900">Shop </h4>
+          <ul className="space-y-1 text-sm text-gray-500 font-medium">
+            <li>
+              <Link to="/" className="hover:text-blue-600 transition-colors block py-2">All Products</Link>
+            </li>
+            <li>
+              <Link to="/featured" className="hover:text-blue-600 transition-colors block py-2">Featured</Link>
+            </li>
+            <li>
+              <Link to="/new-arrivals" className="hover:text-blue-600 transition-colors block py-2">New Arrivals</Link>
+            </li>
+          </ul>
+        </div>
 
         {/* Company */}
-  <div>
-    <h4 className="font-bold mb-6 text-gray-900">Company (О нас)</h4>
-    <ul className="space-y-4 text-sm text-gray-500 font-medium">
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/about">About Us</Link>
-      </li>
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/careers">Careers</Link>
-      </li>
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/contact">Contact</Link>
-      </li>
-      <li className="hover:text-blue-600 transition-colors">
-        <Link to="/shipping">Shipping Policy</Link>
-      </li>
-    </ul>
-  </div>
+        <div>
+          <h4 className="font-bold mb-6 text-gray-900">Company </h4>
+          <ul className="space-y-1 text-sm text-gray-500 font-medium">
+            <li>
+              <Link to="/about" className="hover:text-blue-600 transition-colors block py-2">About Us</Link>
+            </li>
+            <li>
+              <Link to="/careers" className="hover:text-blue-600 transition-colors block py-2">Careers</Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-blue-600 transition-colors block py-2">Contact</Link>
+            </li>
+            <li>
+              <Link to="/shipping" className="hover:text-blue-600 transition-colors block py-2">Shipping Policy</Link>
+            </li>
+          </ul>
+        </div>
 
-  {/* Follow Us */}
+        {/* Follow Us */}
         <div>
           <h4 className="font-bold mb-6 text-gray-900">Follow Us</h4>
           <div className="flex gap-6">
@@ -81,6 +82,6 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-50 text-center text-xs text-gray-400 font-bold uppercase tracking-widest">
         © 2026 Premium Store. Built with passion.
       </div>
-        </footer>
+    </footer>
   );
 };
