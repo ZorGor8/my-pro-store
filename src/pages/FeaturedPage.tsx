@@ -7,7 +7,7 @@ interface FeaturedPageProps {
 
 export const FeaturedPage = ({ products }: FeaturedPageProps) => {
 
-  const featuredItems = products.filter(item => item.rating.rate >= 4.0);
+ const featuredItems = products.filter(item => item.rating?.rate && item.rating.rate >= 4.0);
 
   return (
     <div className="max-w-7xl mx-auto py-20 px-6 animate-in fade-in duration-700">
