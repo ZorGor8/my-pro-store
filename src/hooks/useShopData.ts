@@ -1,42 +1,37 @@
 import { useEffect, useState } from 'react';
 import { useCartStore } from '../store/useCartStore';
 import type { Product } from '../types/product'; 
+import mockProducts from '../products.json'; 
 
 export const useShopData = () => {
   const setProducts = useCartStore((state) => state.setProducts);
-  const [categories, setCategories] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [categories] = useState(["electronics", "jewelery", "men's clothing", "women's clothing"]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const [catRes, prodRes] = await Promise.all([
-          fetch('https://fakestoreapi.com/products/categories'),
-          fetch('https://fakestoreapi.com/products')
-        ]);
+    const data: Product[] = (mockProducts as Product[]).map((product, index) => {
+      const cat = product.category.toLowerCase().trim();
+      let imgNum = 1;
 
-        if (!catRes.ok || !prodRes.ok) throw new Error('Ошибка сети (Network error)');
-
-        const catData: string[] = await catRes.json();
-        const prodData: Product[] = await prodRes.json(); 
-        setCategories(catData);
-        setProducts(prodData);
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError('An unexpected error occurred');
-        }
-      } finally {
-        setIsLoading(false);
+      // Применяем твою схему диапазонов:
+      if (cat.includes("electr")) {
+        imgNum = (index % 5) + 1;  // 1-5
+      } else if (cat.includes("jewel")) {
+        imgNum = (index % 5) + 6;  // 6-10
+      } else if (cat.includes("women")) {
+        imgNum = (index % 5) + 16; // 16-20
+      } else if (cat.includes("men")) {
+        imgNum = (index % 5) + 11; // 11-15
       }
-    };
 
-    fetchData();
+      return {
+        ...product,
+        category: cat,
+        image: `/products/${imgNum}.jpeg` // Подставляем номер в путь
+      };
+    });
+
+    setProducts(data);
   }, [setProducts]);
 
-  return { categories, isLoading, error };
+  return { categories, isLoading: false, error: null };
 };

@@ -20,6 +20,7 @@ export const ProductCard = ({ product }: Props) => {
             alt={product.title} 
             className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-300"
           />
+         
         </div>
         <h3 className="font-semibold text-gray-800 line-clamp-2 group-hover:text-blue-600 transition-colors">
           {product.title}

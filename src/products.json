@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Acoustic Noise Cancelling Headphones",
+    "price": 109.95,
+    "description": "Premium comfort and legendary noise cancellation.",
+    "category": "electronics",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "Stainless Steel Smart Watch",
+    "price": 250.00,
+    "description": "Keep track of your fitness, health, and notifications.",
+    "category": "electronics",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "Ergonomic Office Keyboard",
+    "price": 55.99,
+    "description": "A comfortable typing experience for long workdays.",
+    "category": "electronics",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "title": "Pro Gaming Laptop",
+    "price": 120.00,
+    "description": "A powerful machine designed for high-end performance.",
+    "category": "electronics",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "title": "Sleek Ultra-Slim Laptop",
+    "price": 299.99,
+    "description": "Fast, light, and versatile for productivity on the go.",
+    "category": "electronics",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "title": "Minimalist Gold Heart Ring",
+    "price": 150.00,
+    "description": "A small and delicate symbol of modern love.",
+    "category": "jewelery",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "title": "Elegant Pearl Drops Earrings",
+    "price": 199.99,
+    "description": "Classic and graceful earrings with an open twist design.",
+    "category": "jewelery",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "title": "Minimalist Silver Cuff Bracelet",
+    "price": 75.00,
+    "description": "A simple and stylish bracelet made of sterling silver.",
+    "category": "jewelery",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "title": "Aesthetic Floral Stud Earrings",
+    "price": 38.00,
+    "description": "Handcrafted minimalist floral-inspired earrings.",
+    "category": "jewelery",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "title": "Minimalist Link Chain Bracelet",
+    "price": 110.00,
+    "description": "A timeless design of interlocking gold-plated links.",
+    "category": "jewelery",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "title": "Fjallraven - Kanken Daily Backpack",
+    "price": 109.95,
+    "description": "Functional and durable, with ergonomic shoulder straps.",
+    "category": "men's clothing",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "title": "Classic Mens Denim Trucker Jacket",
+    "price": 40.00,
+    "description": "A must-have piece for every men's casual wardrobe.",
+    "category": "men's clothing",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "title": "Simple Plain Black T-Shirt",
+    "price": 22.30,
+    "description": "A comfortable and essential basic for everyday wear.",
+    "category": "men's clothing",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "title": "Relaxed Fit Urban Hoodie",
+    "price": 35.50,
+    "description": "Soft fleece inside, with functional front pockets.",
+    "category": "men's clothing",
+    "image": ""
+  },
+  {
+    "id": 15,
+    "title": "Padded Urban Backpack",
+    "price": 110.00,
+    "description": "Large compartment for laptop, plus external mesh pockets.",
+    "category": "men's clothing",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "title": "Classic All-White Sneakers",
+    "price": 45.00,
+    "description": "Low-profile design that complements any casual look.",
+    "category": "women's clothing",
+    "image": ""
+  },
+  {
+    "id": 17,
+    "title": "Bold Red Evening Cocktail Dress",
+    "price": 85.99,
+    "description": "An elegant and eye-catching dress for special events.",
+    "category": "women's clothing",
+    "image": ""
+  },
+  {
+    "id": 18,
+    "title": "Structured Designer Leather Handbag",
+    "price": 250.00,
+    "description": "Premium leather, with silver-toned hardware and a spacious interior.",
+    "category": "women's clothing",
+    "image": ""
+  },
+  {
+    "id": 19,
+    "title": "Quilted Crossbody Bag",
+    "price": 999.00,
+    "description": "The epitome of fashion and practical elegance.",
+    "category": "women's clothing",
+    "image": ""
+  },
+  {
+    "id": 20,
+    "title": "Cozy Cable Knit Pullover Sweater",
+    "price": 110.00,
+    "description": "Ultra-soft wool-blend yarn, perfect for cold weather.",
+    "category": "women's clothing",
+    "image": ""
+  }
+]

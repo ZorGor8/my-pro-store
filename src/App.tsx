@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { ShoppingBag } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 // STORE & HOOKS
 import { useCartStore } from './store/useCartStore';
@@ -26,6 +27,7 @@ import './App.css';
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   
   // 1. Подключаем наш новый хук (Connecting our new hook)
   const { categories, isLoading, error } = useShopData();
@@ -78,45 +80,53 @@ function App() {
         </div>
 
         {/* SEARCH */}
-        <div className="relative mb-6 md:mb-8">
-          <input 
-            type="text"
-            placeholder="Поиск товаров..."
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            className="w-full p-3.5 md:p-4 pl-10 md:pl-12 bg-gray-50 border border-transparent rounded-xl md:rounded-2xl outline-none transition-all shadow-inner"
-          />
-          <span className="absolute left-3.5 md:left-4 top-1/2 -translate-y-1/2 text-lg md:text-xl opacity-40">🔍</span>
-        </div>
+        {/* ПОКАЗЫВАЕМ ПОИСК ТОЛЬКО НА ГЛАВНОЙ СТРАНИЦЕ */}
+{/* 1. Открываем условие */}
+{location.pathname === '/' && (
+  /* 2. Обязательно открываем фрагмент, чтобы объединить div и nav */
+  <>
+    {/* SEARCH */}
+    <div className="relative mb-6 md:mb-8">
+      <input 
+        type="text"
+        placeholder="Search products..."
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        className="w-full p-3.5 md:p-4 pl-10 md:pl-12 bg-gray-50 border border-transparent rounded-xl md:rounded-2xl outline-none transition-all shadow-inner"
+      />
+      <span className="absolute left-3.5 md:left-4 top-1/2 -translate-y-1/2 text-lg md:text-xl opacity-40">🔍</span>
+    </div>
 
-        {/* NAVIGATION */}
-        <nav className="flex overflow-x-auto pb-2 md:pb-0 md:flex-wrap gap-2 border-t pt-4 md:pt-6 no-scrollbar">
-          {isLoading ? (
-            <div className="text-gray-400 text-sm animate-pulse">Loading categories...</div>
-          ) : (
-            <>
-              <button 
-                onClick={() => setCategory('all')}
-                className={`whitespace-nowrap px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all ${
-                  selectedCategory === 'all' ? 'bg-black text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                Все товары
-              </button>
-              {categories.map(cat => (
-                <button 
-                  key={cat}
-                  onClick={() => setCategory(cat)}
-                  className={`whitespace-nowrap px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold capitalize transition-all ${
-                    selectedCategory === cat ? 'bg-black text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </>
-          )}
-        </nav>
+    {/* NAVIGATION */}
+    <nav className="flex overflow-x-auto pb-2 md:pb-0 md:flex-wrap gap-2 border-t pt-4 md:pt-6 no-scrollbar">
+      {isLoading ? (
+        <div className="text-gray-400 text-sm animate-pulse">Loading categories...</div>
+      ) : (
+        <>
+          <button 
+            onClick={() => setCategory('all')}
+            className={`whitespace-nowrap px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all ${
+              selectedCategory === 'all' ? 'bg-black text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            Все товары
+          </button>
+          {categories.map(cat => (
+            <button 
+              key={cat}
+              onClick={() => setCategory(cat)}
+              className={`whitespace-nowrap px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-bold capitalize transition-all ${
+                selectedCategory === cat ? 'bg-black text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </>
+      )}
+    </nav>
+  </> 
+)} 
       </header>
 
       <main className="max-w-7xl mx-auto px-0 md:px-4">
