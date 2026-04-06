@@ -9,8 +9,8 @@ interface CartItem extends Product {
 interface CartState {
   cart: CartItem[];
   products: Product[];
-  isInitialLoading: boolean; // Добавь это (Add this)
-  setLoading: (loading: boolean) => void; // И это (And this)
+  isInitialLoading: boolean; 
+  setLoading: (loading: boolean) => void;
   setProducts: (products: Product[]) => void;
   clearCart: () => void;
   isCartOpen: boolean;
@@ -31,15 +31,14 @@ export const useCartStore = create<CartState>()(
     (set) => ({
       cart: [],
       products: [],
-      isInitialLoading: true, // Изначально мы "грузимся" (Starting as true)
+      isInitialLoading: true, 
       setLoading: (loading) => set({ isInitialLoading: loading }),
-      // ----------------------------------------
+   
 
-      // Обновляем setProducts, чтобы он выключал загрузку
-      setProducts: (products) =>
+            setProducts: (products) =>
         set({
           products,
-          isInitialLoading: false, // Когда продукты пришли, загрузка окончена
+          isInitialLoading: false, 
         }),
 
       isCartOpen: false,
@@ -96,12 +95,11 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: "cart-storage",
-      // Маленький совет: не стоит сохранять ВСЕ товары в LocalStorage,
-      // лучше сохранять только корзину (cart). Но пока оставим так для простоты.
+     
  partialize: (state) => {
-  // Мы извлекаем ненужное, а всё остальное (...rest) возвращаем
+
   const { isInitialLoading, ...rest } = state;
-  console.log(isInitialLoading); // Временно добавим это, чтобы линтер не ругался
+  console.log(isInitialLoading); 
   return rest;
 },
     },

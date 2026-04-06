@@ -29,10 +29,10 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   
-  // 1. Подключаем наш новый хук (Connecting our new hook)
+  // 1. Connecting our new hook)
   const { categories, isLoading, error } = useShopData();
 
-  // 2. Достаем всё нужное из стора (Getting store data)
+  // 2.(Getting store data)
   const { 
     toggleCart, cart, setCategory, selectedCategory, 
     searchQuery, setSearchQuery, products 
@@ -40,13 +40,13 @@ function App() {
 
   const [inputValue, setInputValue] = useState(searchQuery);
 
-  // 3. Оставляем только DEBOUNCE поиска (Keep only search debounce)
+  // 3. (Keep only search debounce)
   useEffect(() => {
     const timer = setTimeout(() => setSearchQuery(inputValue), 600);
     return () => clearTimeout(timer);
   }, [inputValue, setSearchQuery]);
 
-  // Обработка ошибок (Error handling)
+  //(Error handling)
   if (error) return <div className="text-center p-20 text-red-500 font-bold">Error: {error}</div>;
 
   return (
@@ -80,10 +80,10 @@ function App() {
         </div>
 
         {/* SEARCH */}
-        {/* ПОКАЗЫВАЕМ ПОИСК ТОЛЬКО НА ГЛАВНОЙ СТРАНИЦЕ */}
-{/* 1. Открываем условие */}
+      
+
 {location.pathname === '/' && (
-  /* 2. Обязательно открываем фрагмент, чтобы объединить div и nav */
+
   <>
     {/* SEARCH */}
     <div className="relative mb-6 md:mb-8">

@@ -12,21 +12,20 @@ export const useShopData = () => {
       const cat = product.category.toLowerCase().trim();
       let imgNum = 1;
 
-      // Применяем твою схему диапазонов:
       if (cat.includes("electr")) {
-        imgNum = (index % 5) + 1;  // 1-5
+        imgNum = (index % 5) + 1;  
       } else if (cat.includes("jewel")) {
-        imgNum = (index % 5) + 6;  // 6-10
+        imgNum = (index % 5) + 6;  
       } else if (cat.includes("women")) {
-        imgNum = (index % 5) + 16; // 16-20
+        imgNum = (index % 5) + 16; 
       } else if (cat.includes("men")) {
-        imgNum = (index % 5) + 11; // 11-15
+        imgNum = (index % 5) + 11; 
       }
 
       return {
         ...product,
         category: cat,
-        image: `/products/${imgNum}.jpeg` // Подставляем номер в путь
+        image: `/products/${imgNum}.jpeg` 
       };
     });
 

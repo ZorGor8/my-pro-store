@@ -14,7 +14,7 @@ export const ProductList = ({ isLoading }: ProductListProps) => {
   const setSearchQuery = useCartStore((state) => state.setSearchQuery);
 
   const filteredProducts = products.filter((p) => {
-    // Приводим к нижнему регистру для надежности
+  
     const selected = selectedCategory.toLowerCase();
     const prodCat = p.category.toLowerCase();
     
@@ -55,4 +55,4 @@ export const ProductList = ({ isLoading }: ProductListProps) => {
       )}
     </section>
   );
-}; // Проверь, чтобы эта скобка закрывала именно компонент
+}; 
