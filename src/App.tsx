@@ -1,3 +1,5 @@
+import { Toaster, toast } from 'react-hot-toast';
+
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { ShoppingBag } from 'lucide-react';
@@ -40,17 +42,28 @@ function App() {
 
   const [inputValue, setInputValue] = useState(searchQuery);
 
+
+useEffect(() => {
+    if (error) {
+      toast.error(`Something went wrong: ${error}`, {
+        duration: 4000,
+        position: 'top-center',
+      });
+    }
+  }, [error]);
+
+  
+
   // 3. (Keep only search debounce)
   useEffect(() => {
     const timer = setTimeout(() => setSearchQuery(inputValue), 600);
     return () => clearTimeout(timer);
   }, [inputValue, setSearchQuery]);
 
-  //(Error handling)
-  if (error) return <div className="text-center p-20 text-red-500 font-bold">Error: {error}</div>;
-
+  
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+      <Toaster />
       <CartDrawer />
       
       <header className="max-w-7xl mx-auto mb-6 md:mb-10 bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100">

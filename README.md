@@ -2,7 +2,7 @@
 
 A high-performance, responsive e-commerce application built with a focus on User Experience (UX) and Performance Optimization.
 
-> **🔗 Live Demo:** [[https://premium-store-zorgor.vercel.app](https://premium-store-zorgor.vercel.app) ](https://my-pro-store-chi.vercel.app/)
+> **🔗 Live Demo:** https://my-pro-store-chi.vercel.app/
 
 ## 🌟 Key Features
 * **Dynamic Product Catalog:** Real-time fetching from the API with optimized data handling.
